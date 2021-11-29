@@ -1,0 +1,44 @@
+version: '3.7'
+services:
+  mongo_db:
+    container_name: db_mongo
+    image: mongo
+    networks:
+      - micro
+
+  configserver:
+    container_name: api-configserver
+    image: configserver
+    ports:
+        - 9997:9997
+    networks:
+      - micro
+
+  discovery:
+    container_name: api-discovery
+    image: discovery
+    ports:
+        - 9999:9999
+    networks:
+      - micro
+
+  gateway:
+    container_name: api-gateway
+    image: py1-gateway
+    ports:
+        - 9998:9998
+    networks:
+      - micro
+
+  banckaccount:
+    container_name: api-banckaccount
+    image: banckaccount
+    ports:
+        - 8081:8081
+    networks:
+      - micro
+
+networks:
+  micro:
+    external: true
+    name: net-micro

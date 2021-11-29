@@ -1,0 +1,16 @@
+server:
+  port: 8082
+
+spring:
+    application:
+        name: credit-microservice
+    data:
+        mongodb:
+            host: db_mongo
+            port: 27017
+            database: BankCredit
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://api-discovery:9999/eureka/

@@ -1,0 +1,16 @@
+server:
+  port: 8083
+
+spring:
+    application:
+        name: accountmovement-microservice
+    data:
+        mongodb:
+            host: db_mongo
+            port: 27017
+            database: AccountMovement
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://api-discovery:9999/eureka/
