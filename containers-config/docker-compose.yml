@@ -24,9 +24,9 @@ services:
 
   gateway:
     container_name: api-gateway
-    image: py1-gateway
+    image: api-gateway
     ports:
-        - 9998:9998
+        - 8080:8080
     networks:
       - micro
 
@@ -35,6 +35,22 @@ services:
     image: banckaccount
     ports:
         - 8081:8081
+    networks:
+      - micro
+
+  accountmovement:
+    container_name: api-accountmovement
+    image: accountmovement
+    ports:
+        - 8083:8083
+    networks:
+      - micro
+
+  banckcredit:
+    container_name: api-banckcredit
+    image: banckcredit
+    ports:
+        - 8082:8082
     networks:
       - micro
 

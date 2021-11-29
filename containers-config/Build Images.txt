@@ -1,0 +1,15 @@
+docker pull mongo:latest
+
+docker build -t discovery .
+
+docker build -t configserver .
+
+docker build -t api-gateway .
+
+docker build -t banckaccount .
+
+docker build -t banckcredit .
+
+docker build -t accountmovement .
+
+docker build -t movemencredit .
